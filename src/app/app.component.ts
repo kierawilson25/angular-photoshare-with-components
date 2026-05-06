@@ -97,7 +97,7 @@ export class AppComponent {
         } 
       ]  
 
-    colorClicked: string = "";  
+  colorClicked: string = "";  
 
 
 

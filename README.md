@@ -1,59 +1,67 @@
-# AngularPhotoshareWithComponents
+# Photo Share
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.24.
+An Angular application that displays a photo gallery with color palette information for each image. Each photo shows the dominant colors extracted from that image as clickable color swatches. Clicking a swatch logs the selected color name to the page.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Displays three photos (British Museum, Emirates Stadium, Albert Hall) with captions and location info
+- Each photo has an associated color palette rendered via the `ColorsComponent`
+- Color swatches are dynamically styled using the hex value and luminance (light colors get black text, dark colors get white text)
+- Clicking a color swatch emits an event up to the parent and displays the last clicked color name
 
-```bash
-ng serve
+## Project Structure
+
+```
+src/
+  app/
+    app.component.ts        # Root component — holds photo/color data and click handler
+    app.component.html      # Main template with photo gallery layout
+    colors/
+      colors.component.ts   # Reusable color swatch component (@Input color, @Output colorClicked)
+      colors.component.html # Renders a single styled color span
+public/
+  5855729828.jpg            # British Museum
+  5855735700.jpg            # Emirates Stadium
+  5855174537.jpg            # Albert Hall
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Prerequisites
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [Angular CLI](https://angular.dev/tools/cli) v19
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Install the CLI globally if you don't have it:
 
 ```bash
-ng generate --help
+npm install -g @angular/cli
 ```
 
-## Building
+## Setup
 
-To build the project run:
+Install dependencies:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Running the App
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+Then open your browser to `http://localhost:4200/`. The app will hot-reload on any source file changes.
 
-For end-to-end (e2e) testing, run:
+## Building for Production
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Output is placed in the `dist/` directory.
 
-## Additional Resources
+## Running Tests
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm test
+```
