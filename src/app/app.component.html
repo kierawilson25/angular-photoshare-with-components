@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Photo Share</title>
+   <link href="https://fonts.googleapis.com/css?family=Oswald:300,500" rel="stylesheet">   
+
+    
+</head>
+<body>
+<main>
+  <section>
+      <article>
+         <img src="5855729828.jpg" alt="British Museum">
+         <div class="caption">
+            <h2>British Museum</h2>
+            <p>London, United Kingdom</p>
+            <h3>Colors</h3>
+            <app-colors
+              *ngFor="let color of colors1"
+              [color]="color"
+              (colorClicked)="logClick($event)"
+            ></app-colors>
+            <!-- <span style="background-color: #a9b490; ">Norway</span><span style="background-color: #bab984; ">Pine Glade</span><span style="background-color: #71735c; ">Finch</span><span style="background-color: #332625; color: white; ">Wood Bark</span><span style="background-color: #b99a5d; ">Barley Corn</span> -->
+         </div>
+      </article>
+      <article>
+         <img src="5855735700.jpg" alt="Emirates Stadium">
+         <div class="caption">
+            <h2>Emirates Stadium</h2>
+            <p>London, United Kingdom</p>
+            <h3>Colors</h3>
+            <app-colors
+              *ngFor="let color of colors3"
+              [color]="color"
+              (colorClicked)="logClick($event)"
+            ></app-colors>
+         </div>
+      </article>
+      <article>
+         <img src="5855174537.jpg" alt="Albert Hall">
+         <div class="caption">
+            <h2>Albert Hall</h2>
+            <p>London, United Kingdom</p>
+            <h3>Colors</h3>
+            <app-colors
+              *ngFor="let color of colors2"
+              [color]="color"
+              (colorClicked)="logClick($event)"
+            ></app-colors>
+         </div>
+      </article>
+   </section> 
+</main>
+<p>{{colorClicked}}</p>
+</body>
+</html>
+ 
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />

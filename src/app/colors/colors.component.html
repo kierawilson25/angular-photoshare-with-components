@@ -1,0 +1,4 @@
+<div>
+    <span (click)="onColorClicked()" [style.background-color]="color.hex" [style.color]="color.luminance < 70 ? 'white' : 'black'" >{{ color.name }}</span>
+</div>
+
